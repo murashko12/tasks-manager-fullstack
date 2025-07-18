@@ -1,7 +1,7 @@
 import type { TaskCategoryType, TaskPriorityType, TaskStatusType } from "@/shared/types/enums"
 
 export interface ITask {
-    id: number
+    id: string
     title: string
     description: string
     status: TaskStatusType

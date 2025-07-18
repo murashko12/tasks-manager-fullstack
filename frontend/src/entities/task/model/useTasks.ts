@@ -31,7 +31,7 @@ export const useTasks = () => {
         }
     }
 
-    const updateTask = async (id: number, changes: Partial<ITask>) => {
+    const updateTask = async (id: string, changes: Partial<ITask>) => {
         try {
             await updateTaskMutation({ id, changes }).unwrap()
         } catch (e) {
@@ -39,7 +39,7 @@ export const useTasks = () => {
         }
     }
 
-    const deleteTask = async (id: number) => {
+    const deleteTask = async (id: string) => {
         try {
             await deleteTaskMutation(id).unwrap()
         } catch (e) {
@@ -55,7 +55,7 @@ export const useTasks = () => {
         }
     }
 
-    const getTaskById = (id: number) => tasks.find((task) => task.id === id)
+    const getTaskById = (id: string) => tasks.find((task) => task.id === id)
 
     return {
         tasks,
@@ -67,6 +67,6 @@ export const useTasks = () => {
         updateTask,
         deleteTask,
         reorderTasks,
-        getTaskById,
+        getTaskById
     }
 }
